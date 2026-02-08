@@ -1,0 +1,15 @@
+<div>
+    <h1>Appointment List</h1>
+    
+    <div>
+        <input [(ngModel)]="newAppointmentTitle" placeholder="Enter a Title">
+        <input [(ngModel)]="newAppointmentDate" type="date">
+        <button (click)="addAppointment()">Add Appointment</button>
+    </div>
+    <ul>
+        <li *ngFor=" let appointment of appointments; index as i">
+           {{appointment.id}} {{ appointment.title }} {{ appointment.date | date: 'shortDate' }}
+             <button (click)="deleteAppointments(i)">Delete Appointment</button>
+        </li>
+       </ul>
+</div>  
